@@ -1,21 +1,19 @@
 package br.com.caelum.leilao.teste;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
-
-import java.util.List;
-
-import junit.framework.Assert;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import br.com.caelum.leilao.builder.CriadorDeLeilao;
 import br.com.caelum.leilao.dominio.Lance;
 import br.com.caelum.leilao.dominio.Leilao;
 import br.com.caelum.leilao.dominio.Usuario;
 import br.com.caelum.leilao.servico.Avaliador;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class TesteDoAvaliador {
 	
@@ -45,8 +43,8 @@ public class TesteDoAvaliador {
 		//assertEquals(400, avaliador.getMaiorLance(), 0.00001);
 		//assertEquals(250, avaliador.getMenorLance(), 0.00001);
 		
-		assertThat(avaliador.getMaiorLance(), equalTo(400));
-		assertThat(avaliador.getMenorLance(), equalTo(250));
+		assertThat(String.valueOf(avaliador.getMaiorLance()), is(equalTo(String.valueOf(400))));
+		assertThat(String.valueOf(avaliador.getMenorLance()), is(equalTo(String.valueOf(250))));
 	}
 	
 	@Test
